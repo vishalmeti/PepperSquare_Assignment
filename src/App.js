@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Body from "./Body";
+import Footer from "./components/Footer";
+import "./App.css";
+import { X } from "lucide-react";
+import { EventContextProvider } from "./context/eventContext";
 
-function App() {
+const App = () => {
+  const [overLay, setoverLay] = useState(false);
+  const [imgData, setImgData] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("openOverlay", open);
+    return () => {
+      window.removeEventListener("openOverlay", open);
+    };
+  }, []);
+
+  const open = (e) => {
+    setImgData(e.detail.data);
+    setoverLay(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {overLay ? (
+        <div className="overlay">
+          <div className="close">
+            <X color="white" onClick={() => setoverLay(false)} size={30} />
+          </div>
+          <img src={imgData.img} alt="" className="overlayImage" />
+          <p className="overlayText">
+            <div>{imgData.title}</div>
+            <div>{imgData.date}</div>
+          </p>
+        </div>
+      ) : null}
+      <Navbar />
+      <EventContextProvider>
+        <Body />
+      </EventContextProvider>
     </div>
   );
-}
+};
 
 export default App;

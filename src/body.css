@@ -1,0 +1,65 @@
+.body {
+  flex: 1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.galary {
+  width: 100vw;
+  height: 449px;
+  top: 123px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  border: 1px solid green;
+  background-image: url("./assets/galary.png");
+  background-size: cover; /* Adjust 'cover' or 'contain' as needed */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid;
+
+  /* border-image-source: linear-gradient(0deg, #000000, #000000),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); */
+}
+
+.gradient-overlay {
+  width: 100vw;
+  height: 449px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+.galaryText {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 449px;
+  color: white;
+}
+
+.heading {
+  font-family: Playfair Display;
+  font-size: 82px;
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+  margin:0;
+}
+
+.subText{
+    padding: 0;
+    margin:0;
+    /* font-family: Poppins; */
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    
+}
+
