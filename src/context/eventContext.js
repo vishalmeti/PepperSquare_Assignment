@@ -11,7 +11,6 @@ const EventContextProvider = ({ children }) => {
   const [loadMore, setloadMore] = useState(5);
 
   useEffect(() => {
-    //call api
     fetchEvents();
   }, []);
 
