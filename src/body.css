@@ -10,7 +10,6 @@
   top: 123px;
   gap: 0px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   border: 1px solid green;
   background-image: url("./assets/galary.png");
   background-size: cover; /* Adjust 'cover' or 'contain' as needed */
